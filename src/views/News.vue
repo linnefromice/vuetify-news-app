@@ -6,7 +6,7 @@
     <v-flex
       v-for="(posts, idx) in processedPosts"
       :key="idx"
-      xs12
+      xs6
     >
       <v-card
         v-for="(post, postIdx) in posts"
@@ -15,7 +15,11 @@
         target="_blank"
       >
         <v-card-title>
-          <span class="blue--text">{{ post.title }}</span>
+          <div>
+            <span class="blue--text">TITLE : {{ post.title }}</span><br>
+            <span class="gray--text">SECTION : {{ post.section }}</span><br>
+            <span class="gray--text">{{ post.byline }}</span>
+          </div>
         </v-card-title>
         <v-card-actions>
           <v-img
@@ -33,7 +37,7 @@
 </template>
 
 <script>
-const NYTBaseUrl = "XXXX";
+const NYTBaseUrl = "https://api.nytimes.com/svc/topstories/v2/";
 const ApiKey = "XXXX";
 
 function buildUrl (url) {
