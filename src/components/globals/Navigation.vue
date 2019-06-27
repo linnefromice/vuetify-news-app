@@ -41,6 +41,7 @@ export default {
       { name:'NEWS', icon:'chat', to:'/news'},
       { name:'ABOUT ME', icon:'question_answer', to:'/about' },
       { name:'ADV', icon:'info', to:'/advertisement' },
+      { name:'TEST', icon:'info', to:'/test'},
     ],
     drawer: true,
     mini: true,

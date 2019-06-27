@@ -13,21 +13,31 @@
             alt="avatar"
           ></v-img>
         </v-avatar>
-        <p class="headline font-weight mt-2"> {{ name }}</p>
+        <p class="headline font-weight mt-2"> {{ user.name }}</p>
         <p
           class="title font-weight-thin mt-3"
-        >{{ introduction }}</p>
+        >{{ user.introduction }}</p>
       </v-flex>
     </v-layout>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  name: 'About',
+  computed: {
+    ...mapGetters('user', {
+      user: 'getState'
+    })
+  }
+  /*
   data: () => ({
     name: "linnefromice",
     introduction: "Hello I'm a Web Developer from Japan. Have 3 years work experience in IT Industry.",
   })
+  */
 }
 </script>
 

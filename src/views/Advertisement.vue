@@ -4,9 +4,6 @@
       <template
         v-for="(techstack, index) in techstacks"
       >
-        <v-divider
-          :key="index"
-        ></v-divider>
         <v-list-tile
           :key="index"
           :href="techstack.url"
@@ -23,9 +20,6 @@
             <v-list-tile-sub-title v-html="techstack.description"></v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-divider
-          :key="index"
-        ></v-divider>
       </template>
     </v-list>
   </v-container>

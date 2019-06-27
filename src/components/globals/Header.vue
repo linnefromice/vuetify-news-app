@@ -6,9 +6,9 @@
     clipped-right
   >
     <v-toolbar-title class="headline text-uppercase">
-      <span>NEWS SITE</span>
+      <span>{{ basicInformation.main }}</span>
       <v-spacer></v-spacer>
-      <span class="font-weight-light">The New York Times</span>
+      <span class="font-weight-light">{{ basicInformation.sub }}</span>
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-btn
@@ -30,14 +30,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  name: 'Header',
   data: () => ({
-    links: [  
+    links: [
       { name:'NEWS', icon:'chat', to:'/news'},
       { name:'ABOUT ME', icon:'question_answer', to:'/about' },
       { name:'ADV', icon:'info', to:'/advertisement' },
+      { name:'TEST', icon:'info', to:'/test'},
     ]
-  })
+  }),
+  computed: {
+    ...mapGetters('basicInformation', {
+      basicInformation: 'getState'
+    })
+  }
 }
 </script>
 
