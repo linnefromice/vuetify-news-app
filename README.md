@@ -14,6 +14,7 @@ You can use vue with other library/frameworks:
 
 - [Vuetify](https://vuetifyjs.com/) ... Design Framework.
 - [Vue Router]() ... Vue.js's official router.
+- [Vuex](https://vuex.vuejs.org) ... State management pattern + library for Vue.js applications.
 - [axios](https://github.com/axios/axios) ... Promise based HTTP client for the browser and node.js.
 - [Font Awesome](https://fontawesome.com/) ... The web's most popular icon set and toolkit. 
 
