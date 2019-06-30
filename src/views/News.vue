@@ -1,4 +1,4 @@
-<template>
+<template> 
   <v-layout
     row
     wrap
@@ -11,7 +11,6 @@
       <v-card
         v-for="(post, postIdx) in posts"
         :key="postIdx"
-        :href="post.url"
         target="_blank"
       >
         <v-card-title>
@@ -20,13 +19,25 @@
             <span class="gray--text">SECTION : {{ post.section }}</span><br>
             <span class="gray--text">{{ post.byline }}</span>
           </div>
-        </v-card-title>
+        </v-card-title>      
+        <v-img
+          :src="post.image_url"
+          height="200px"
+        >
+        </v-img>
         <v-card-actions>
-          <v-img
-            :src="post.image_url"
-            height="200px"
-            contain
-          ></v-img>
+          <v-btn
+            icon
+            v-on:click="addNews(post)"
+          >
+            <v-icon>bookmark</v-icon>
+          </v-btn>
+          <v-btn
+            icon
+            :href="post.url"
+          >
+            <v-icon>link</v-icon>
+          </v-btn>
         </v-card-actions>
         <v-card-text>
           <span class="grey--text">{{ post.abstract }}</span>
@@ -45,13 +56,17 @@ function buildUrl (url) {
 }
 
 export default {
+  name: 'News',
   data: () => ({
-    results: []
+    results: [],
   }),
   mounted () {
     this.getPosts('home');
   },
   methods: {
+    addNews (post) {
+      this.$store.dispatch('bookmarkNews/addNews', post)
+    },
     getPosts(section) {
       let url = buildUrl(section);
       axios.get(url).then((response) => {

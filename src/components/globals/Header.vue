@@ -37,6 +37,7 @@ export default {
   data: () => ({
     links: [
       { name:'NEWS', icon:'chat', to:'/news'},
+      { name:'BOOKMARK', icon:'bookmark', to:'/bookmarkedNews'},
       { name:'ABOUT ME', icon:'question_answer', to:'/about' },
       { name:'ADV', icon:'info', to:'/advertisement' },
       { name:'TEST', icon:'info', to:'/test'},

@@ -2,9 +2,10 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import News from './../views/News.vue';
+import BookmarkNews from '../views/BookmarkedNews.vue';
 import About from './../views/About.vue';
 import Advertisement from './../views/Advertisement.vue';
-import Test from './../views/Test.vue'
+import Test from './../views/Test.vue';
 
 Vue.use(Router);
 
@@ -14,6 +15,11 @@ export default new Router({
       path: '/news',
       name: 'news',
       component: News,
+    },
+    {
+      path: '/bookmarkedNews',
+      name: 'bookmarkedNews',
+      component: BookmarkNews,
     },
     {
       path: '/about',
